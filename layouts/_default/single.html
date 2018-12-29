@@ -21,6 +21,9 @@
                     <h2 class="subheading">{{ .Params.subtitle }}</h2>
                     <span  class="meta">Postado por {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Title }}{{ end }} em {{ .Date.Format "Monday, January 2, 2006" }}
                     </span>
+                    <div id="share-buttons">
+                        {{ partial "share_buttons.html" . }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,15 +57,19 @@
                 {{ end }}
         
               <hr>
+              <div id="share-buttons">
+                {{ partial "share_buttons.html" . }}
+            </div>
+            <hr>
               <ul class="pager">
                   {{ if .NextPage }}
                   <li class="previous">
-                      <a href="{{ .NextPage.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextPage.Title}}">&larr; Post anterior</a>
+                      <a href="{{ .NextPage.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextPage.Title}}">&larr; Anterior</a>
                   </li>
                   {{ end }}
                   {{ if .PrevPage }}
                   <li class="next">
-                      <a href="{{ .PrevPage.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevPage.Title}}">Próximo post &rarr;</a>
+                      <a href="{{ .PrevPage.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevPage.Title}}">Próximo &rarr;</a>
                   </li>
                   {{ end }}
               </ul>
