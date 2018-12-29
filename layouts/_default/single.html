@@ -19,10 +19,7 @@
                     </div>
                     <h1>{{ .Title }}</h1>
                     <h2 class="subheading">{{ .Params.subtitle }}</h2>
-                    <span  class="meta">Posted by {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Title }}{{ end }} on {{ .Date.Format "Monday, January 2, 2006" }}
-                        {{ if .Site.Params.page_view_conter }}
-                        {{ partial "page_view_counter.html" . }}
-                        {{ end }}
+                    <span  class="meta">Postado por {{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Title }}{{ end }} em {{ .Date.Format "Monday, January 2, 2006" }}
                     </span>
                 </div>
             </div>
@@ -46,7 +43,7 @@
         		{{ if eq .Params.showtoc false }}
         		{{ else }}
                         <header>
-                        <h2>TOC</h2>
+                        <h2>Sumário</h2>
                         </header>
                         {{.TableOfContents}}
         		{{ end }}
@@ -58,14 +55,14 @@
         
               <hr>
               <ul class="pager">
-                  {{ if .Prev }}
+                  {{ if .NextPage }}
                   <li class="previous">
-                      <a href="{{ .Prev.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .Prev.Title}}">&larr; Previous Post</a>
+                      <a href="{{ .NextPage.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextPage.Title}}">&larr; Post anterior</a>
                   </li>
                   {{ end }}
-                  {{ if .Next }}
+                  {{ if .PrevPage }}
                   <li class="next">
-                      <a href="{{ .Next.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .Next.Title}}">Next Post &rarr;</a>
+                      <a href="{{ .PrevPage.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevPage.Title}}">Próximo post &rarr;</a>
                   </li>
                   {{ end }}
               </ul>
@@ -83,7 +80,7 @@
                 {{ if .Site.Params.featured_tags }}
                 <section>
                     <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                         {{ $featured_condition_size := .Site.Params.featured_condition_size }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -101,7 +98,7 @@
                 {{ if .Site.Params.friends }}
                 <section>
                     <hr>
-                    <h5>FRIENDS</h5>
+                    <h5>Amigos</h5>
                     <ul class="list-inline">
                         {{ range .Site.Params.friend_link }}
                         <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>

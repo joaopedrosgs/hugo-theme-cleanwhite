@@ -11,7 +11,7 @@
     {{ if .Site.Params.featured_tags }}
     <section>
         <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
+        <h5>Tags</h5>
         <div class="tags">
             {{ $featured_condition_size := .Site.Params.featured_condition_size }} 
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -27,7 +27,7 @@
 
     <!-- Short About -->
     <section class="visible-md visible-lg">
-        <hr><h5><a href="">ABOUT ME</a></h5>
+        <hr><h5><a href="">Sobre mim</a></h5>
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
             <img src="{{ . | relURL }}" />
@@ -57,42 +57,12 @@
                    </a>
                </li>
                {{ end }}
-               {{ with .Site.Params.social.zhihu }}
-               <li>
-                   <a target="_blank" href="{{ . }}">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa  fa-stack-1x fa-inverse">知</i>
-                       </span>
-                   </a>
-               </li>
-               {{ end }}
-               {{ with .Site.Params.social.weibo }}
-               <li>
-                   <a target="_blank" href="{{ . }}">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               {{ end }}
                {{ with .Site.Params.social.facebook }}
                <li>
                    <a target="_blank" href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fa fa-circle fa-stack-2x"></i>
                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               {{ end }}
-               {{ with .Site.Params.social.wechat }}
-               <li>
-                   <a target="_blank" href="{{ . | relURL}}">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
                        </span>
                    </a>
                </li>
@@ -134,7 +104,7 @@
     {{ if .Site.Params.friends }}
     <section>
         <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
+        <h5>Amigos</h5>
         <ul class="list-inline">
             {{ range .Site.Params.friend_link }}
             <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>
@@ -147,7 +117,7 @@
     {{ if .Site.Params.bookmarks }}
     <section>
         <hr>
-        <h5>BOOKMARKS</h5>
+        <h5>Bookmarks</h5>
         <ul class="list-inline">
             {{ range .Site.Params.bookmark_link }}
             <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>
