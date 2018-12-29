@@ -119,13 +119,12 @@ Open search page in your browser: http://localhost:1313/search
 
 ### Analytics
 
-You can optionally enable Google or Baidu Analytics. Type your tracking code in the 
+You can optionally enable Google. Type your tracking code in the 
 
 ```toml
 googleAnalytics = "UA-XXXXX-X"
-ba_track_id  = "XXXXXXXXXXXXXXXX"
 ```
-Leave the `googleAnalytics`  or 'ba_track_id ' key empty to disable it.
+Leave the `googleAnalytics` key empty to disable it.
 
 ### Wechat Pay & Alipay Rewards
 
